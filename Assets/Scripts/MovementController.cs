@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour
 
     private float horizontalSpeed;
     private float verticalSpeed;
+    [HideInInspector] public Vector2 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class MovementController : MonoBehaviour
     void FixedUpdate()
     {
         // rotation
-        Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, AngularSpeed * Time.deltaTime);
