@@ -8,8 +8,6 @@ public class Shooter : MonoBehaviour
 
     [Header("General settings")]
     public float bulletSpeed = 10f;
-    [Header("Player settings")]
-    public MovementController playerMovementController;
     [Header("Prefab settings")]
     public Transform bulletFolder;
     public GameObject bulletPrefab;
@@ -35,10 +33,7 @@ public class Shooter : MonoBehaviour
         Transform playerTransform = transform;
         bullet.transform.position = playerTransform.position;
         bullet.transform.rotation = playerTransform.rotation;
-
-        Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
-        Vector2 direction = playerMovementController.direction;
-        bulletRigidbody.velocity = new Vector2(direction.x * bulletSpeed, direction.y * bulletSpeed);
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
         
         bullets.Add(bullet);
     }
