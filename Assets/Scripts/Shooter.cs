@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,19 +14,19 @@ public class Shooter : MonoBehaviour
     public Transform bulletFolder;
     public GameObject bulletPrefab;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static List<GameObject> bullets = new List<GameObject>();
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButtonDown("shoot"))
         {
             Shoot();
         }
+    }
+
+    private void FixedUpdate()
+    {
+        RemoveOffScreenBullets();
     }
 
     private void Shoot()
@@ -38,5 +39,18 @@ public class Shooter : MonoBehaviour
         Rigidbody2D bulletRigidbody = bullet.GetComponent<Rigidbody2D>();
         Vector2 direction = playerMovementController.direction;
         bulletRigidbody.velocity = new Vector2(direction.x * bulletSpeed, direction.y * bulletSpeed);
+        
+        bullets.Add(bullet);
+    }
+
+    private void RemoveOffScreenBullets()
+    {
+        foreach (GameObject bullet in bullets.GetRange(0, bullets.Count))
+        {
+            if (!bullet.GetComponent<SpriteRenderer>().isVisible)
+            {
+                bullets.Remove(bullet);
+            }
+        }
     }
 }
