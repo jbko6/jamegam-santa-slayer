@@ -22,11 +22,6 @@ public class Shooter : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        RemoveOffScreenBullets();
-    }
-
     private void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, bulletFolder);
@@ -34,18 +29,5 @@ public class Shooter : MonoBehaviour
         bullet.transform.position = playerTransform.position;
         bullet.transform.rotation = playerTransform.rotation;
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
-        
-        bullets.Add(bullet);
-    }
-
-    private void RemoveOffScreenBullets()
-    {
-        foreach (GameObject bullet in bullets.GetRange(0, bullets.Count))
-        {
-            if (!bullet.GetComponent<SpriteRenderer>().isVisible)
-            {
-                bullets.Remove(bullet);
-            }
-        }
     }
 }
