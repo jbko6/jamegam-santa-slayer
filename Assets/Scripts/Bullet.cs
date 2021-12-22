@@ -11,9 +11,11 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Elf"))
         {
+            ScoreScript.scoreValue ++;
             ElfSpawner.elves.Remove(other.gameObject);
             Destroy(other.gameObject);
             Destroy(gameObject);
+
         }
     }
 
