@@ -6,14 +6,20 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //
+
+    public GameObject hitEffect;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Elf"))
         {
             other.GetComponent<Elf>().Die();
+            
+            // snow splatter effect
+            GameObject effect = Instantiate(hitEffect);
+            effect.transform.position = transform.position;
+            
             Destroy(gameObject);
-
         }
     }
 
