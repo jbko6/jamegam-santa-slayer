@@ -10,15 +10,25 @@ public class Shooter : MonoBehaviour
     public float bulletSpeed = 10f;
     public float bulletDistanceFromPlayer;
     public bool triShot;
+    public float shootCooldown = 1f;
     [Header("Prefab settings")]
     public Transform bulletFolder;
     public GameObject bulletPrefab;
 
+
+    private float shootTimer = 0f;
+    
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.timeScale == 1f)
+        shootTimer += Time.deltaTime;
+        
+        if (Input.GetButton("Fire1") && Time.timeScale == 1f)
         {
-            Shoot();
+            if (shootTimer >= shootCooldown)
+            {
+                shootTimer = 0f;
+                Shoot();
+            }
         }
     }
 
