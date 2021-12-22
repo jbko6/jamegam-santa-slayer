@@ -11,8 +11,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Elf"))
         {
-            ElfSpawner.elves.Remove(other.gameObject);
-            Destroy(other.gameObject);
+            other.GetComponent<Elf>().Die();
             Destroy(gameObject);
         }
     }
