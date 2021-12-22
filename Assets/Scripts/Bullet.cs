@@ -26,6 +26,6 @@ public class Bullet : MonoBehaviour
     // delete the bullet after it goes offscreen
     private void OnBecameInvisible()
     {
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 1f);
     }
 }
