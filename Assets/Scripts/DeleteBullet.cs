@@ -8,7 +8,6 @@ public class DeleteBullet : MonoBehaviour
     
     private void OnBecameInvisible()
     {
-        Shooter.bullets.Remove(gameObject);
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 }
