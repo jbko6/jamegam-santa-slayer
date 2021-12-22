@@ -7,6 +7,17 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
 
+    public void Update()
+    {
+        if (Input.GetButtonDown("Cancel")) {
+            if (Time.timeScale == 1f) {
+                Pause();
+            } else {
+                Resume();
+            }
+        }
+    }
+
     public void Pause()
     {
         pauseMenu.SetActive(true);
