@@ -16,11 +16,12 @@ public class Powerup : MonoBehaviour
     
     private void Start()
     {
-        //powerups.Add(SpeedBoost);
-        //powerups.Add(Shotgun);
-        //powerups.Add(GattlingGun);
+        powerups.Add(SpeedBoost);
+        powerups.Add(Shotgun);
+        powerups.Add(GattlingGun);
         powerups.Add(FreezeElves);
-        //powerups.Add(QuadShot);
+        powerups.Add(QuadShot);
+        powerups.Add(Blizzard);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -107,6 +108,19 @@ public class Powerup : MonoBehaviour
 
         shooter.quadShot = false;
         
+        Destroy(gameObject);
+    }
+
+    IEnumerator Blizzard(Collider2D player)
+    {
+        Shooter shooter = player.GetComponent<Shooter>();
+        shooter.ResetBlizzard();
+        shooter.blizzard = true;
+
+        yield return new WaitForSeconds(duration);
+
+        shooter.blizzard = false;
+
         Destroy(gameObject);
     }
 }

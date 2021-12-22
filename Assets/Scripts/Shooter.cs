@@ -11,14 +11,18 @@ public class Shooter : MonoBehaviour
     public float bulletDistanceFromPlayer;
     public bool triShot;
     public bool quadShot;
+    public bool blizzard;
     public float normalShootCoolDown = 1f;
     public float shootCooldown = 1f;
+    public float blizzardShootCooldown = 0.05f;
     [Header("Prefab settings")]
     public Transform bulletFolder;
     public GameObject bulletPrefab;
-
+    
     private Transform playerTransform;
     private float shootTimer = 0f;
+    private float blizzardShootTimer = 0f;
+    private float blizzardAngle = 0f;
 
     private void Start()
     {
@@ -35,6 +39,18 @@ public class Shooter : MonoBehaviour
             {
                 shootTimer = 0f;
                 Shoot();
+            }
+        }
+
+        if (blizzard)
+        {
+            blizzardShootTimer += Time.deltaTime;
+
+            if (blizzardShootTimer >= blizzardShootCooldown)
+            {
+                blizzardShootTimer = 0f;
+                ShootAtAngle(blizzardAngle);
+                blizzardAngle += 30f;
             }
         }
     }
@@ -65,5 +81,11 @@ public class Shooter : MonoBehaviour
         bullet.transform.Rotate(0, 0, angle);
         bullet.transform.position = playerTransform.position + (bullet.transform.up * bulletDistanceFromPlayer);
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
+    }
+
+    public void ResetBlizzard()
+    {
+        blizzardShootTimer = 0f;
+        blizzardAngle = 0f;
     }
 }
