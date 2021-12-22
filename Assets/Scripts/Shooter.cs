@@ -10,6 +10,7 @@ public class Shooter : MonoBehaviour
     public float bulletSpeed = 10f;
     public float bulletDistanceFromPlayer;
     public bool triShot;
+    public float normalShootCoolDown = 1f;
     public float shootCooldown = 1f;
     [Header("Prefab settings")]
     public Transform bulletFolder;

@@ -10,6 +10,7 @@ public class Powerup : MonoBehaviour
     public float duration = 5f;
     [Header("Powerup settings")]
     public float speedBoost = 5f;
+    public float gattlingGunSpeed = 0f;
 
     private List<Func<Collider2D, IEnumerator>> powerups = new List<Func<Collider2D, IEnumerator>>();
     
@@ -17,6 +18,7 @@ public class Powerup : MonoBehaviour
     {
         powerups.Add(SpeedBoost);
         powerups.Add(Shotgun);
+        powerups.Add(GattlingGun);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -60,6 +62,18 @@ public class Powerup : MonoBehaviour
 
         shooter.triShot = false;
         
+        Destroy(gameObject);
+    }
+
+    IEnumerator GattlingGun(Collider2D player)
+    {
+        Shooter shooter = player.GetComponent<Shooter>();
+        shooter.shootCooldown = 0;
+
+        yield return new WaitForSeconds(duration);
+
+        shooter.shootCooldown = shooter.normalShootCoolDown;
+
         Destroy(gameObject);
     }
 }
