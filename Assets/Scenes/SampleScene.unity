@@ -45617,6 +45617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpeed: 10
   bulletDistanceFromPlayer: 1
+  triShot: 0
   bulletFolder: {fileID: 1012483110}
   bulletPrefab: {fileID: 3136627475900056438, guid: 25ea1f703fac248e580f49049ef95bde, type: 3}
 --- !u!1 &1981585517

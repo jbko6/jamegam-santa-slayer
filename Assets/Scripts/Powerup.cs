@@ -16,6 +16,7 @@ public class Powerup : MonoBehaviour
     private void Start()
     {
         powerups.Add(SpeedBoost);
+        powerups.Add(Shotgun);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -46,6 +47,18 @@ public class Powerup : MonoBehaviour
 
         movementController.speed -= speedBoost;
         movementController.iceSpeed -= speedBoost;
+        
+        Destroy(gameObject);
+    }
+
+    IEnumerator Shotgun(Collider2D player)
+    {
+        Shooter shooter = player.GetComponent<Shooter>();
+        shooter.triShot = true;
+
+        yield return new WaitForSeconds(duration);
+
+        shooter.triShot = false;
         
         Destroy(gameObject);
     }
