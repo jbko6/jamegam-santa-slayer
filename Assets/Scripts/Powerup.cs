@@ -19,6 +19,7 @@ public class Powerup : MonoBehaviour
         powerups.Add(SpeedBoost);
         powerups.Add(Shotgun);
         powerups.Add(GattlingGun);
+        powerups.Add(FreezeElves);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -75,5 +76,22 @@ public class Powerup : MonoBehaviour
         shooter.shootCooldown = shooter.normalShootCoolDown;
 
         Destroy(gameObject);
+    }
+
+    IEnumerator FreezeElves(Collider2D player)
+    {
+        foreach (GameObject elf in ElfSpawner.elves)
+        {
+            elf.GetComponent<Elf>().Freeze();
+        }
+
+        yield return new WaitForSeconds(duration);
+
+        foreach (GameObject elf in ElfSpawner.elves)
+        {
+            elf.GetComponent<Elf>().Unfreeze();
+            
+            Destroy(gameObject);
+        }
     }
 }
