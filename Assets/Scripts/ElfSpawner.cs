@@ -12,7 +12,6 @@ public class ElfSpawner : MonoBehaviour
     public float timeBetweenSpawns = 5f;
 
     private float timer = 0f;
-    public static List<GameObject> elves = new List<GameObject>();
     private List<Transform> spawns = new List<Transform>();
 
     // Start is called before the first frame update
@@ -44,7 +43,5 @@ public class ElfSpawner : MonoBehaviour
         elf.GetComponent<AIDestinationSetter>().target = playerTransform;
         // randomize spawn
         elf.transform.position = spawns[UnityEngine.Random.Range(0, spawns.Count)].position;
-        
-        elves.Add(elf);
     }
 }

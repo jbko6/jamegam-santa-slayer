@@ -11,9 +11,13 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Elf"))
         {
+<<<<<<< HEAD
             ScoreScript.scoreValue ++;
             ElfSpawner.elves.Remove(other.gameObject);
             Destroy(other.gameObject);
+=======
+            other.GetComponent<Elf>().Die();
+>>>>>>> db37d67366c2b636778314cb01ee083fedcf6b2b
             Destroy(gameObject);
 
         }
@@ -22,7 +26,6 @@ public class Bullet : MonoBehaviour
     // delete the bullet after it goes offscreen
     private void OnBecameInvisible()
     {
-        Shooter.bullets.Remove(gameObject);
-        Destroy(gameObject);
+        Destroy(gameObject, 2f);
     }
 }
