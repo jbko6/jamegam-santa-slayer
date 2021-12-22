@@ -11,8 +11,6 @@ public class Bullet : MonoBehaviour
     {
         if (other.CompareTag("Elf"))
         {
-            ScoreScript.scoreValue ++;
-            Destroy(other.gameObject);
             other.GetComponent<Elf>().Die();
             Destroy(gameObject);
 
