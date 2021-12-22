@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
             
             // snow splatter effect
             GameObject effect = Instantiate(hitEffect);
-            effect.transform.position = transform.position;
+            effect.transform.position = new Vector3(transform.position.x, transform.position.y, -5f);
             
             Destroy(gameObject);
         }
