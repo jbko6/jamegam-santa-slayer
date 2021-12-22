@@ -16,9 +16,14 @@ public class Shooter : MonoBehaviour
     public Transform bulletFolder;
     public GameObject bulletPrefab;
 
-
+    private Transform playerTransform;
     private float shootTimer = 0f;
-    
+
+    private void Start()
+    {
+        playerTransform = transform;
+    }
+
     void Update()
     {
         shootTimer += Time.deltaTime;
@@ -35,27 +40,22 @@ public class Shooter : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, bulletFolder);
-        Transform playerTransform = transform;
-        bullet.transform.position = playerTransform.position + (playerTransform.up * bulletDistanceFromPlayer);
-        bullet.transform.rotation = playerTransform.rotation;
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
+        ShootAtAngle(0f);
 
         // shoot two extra bullets
         if (triShot)
         {
-            GameObject leftBullet = Instantiate(bulletPrefab, bulletFolder);
-            //leftBullet.transform.position = playerTransform.position + (playerTransform.up * bulletDistanceFromPlayer);
-            leftBullet.transform.rotation = playerTransform.rotation;
-            leftBullet.transform.Rotate(0, 0, -15f);
-            leftBullet.transform.position = playerTransform.position + (leftBullet.transform.up * bulletDistanceFromPlayer);
-            leftBullet.GetComponent<Rigidbody2D>().velocity = leftBullet.transform.up * bulletSpeed;
-            
-            GameObject rightBullet = Instantiate(bulletPrefab, bulletFolder);
-            rightBullet.transform.rotation = playerTransform.rotation;
-            rightBullet.transform.Rotate(0, 0, 15f);
-            rightBullet.transform.position = playerTransform.position + (rightBullet.transform.up * bulletDistanceFromPlayer);
-            rightBullet.GetComponent<Rigidbody2D>().velocity = rightBullet.transform.up * bulletSpeed;
+            ShootAtAngle(-15f);
+            ShootAtAngle(15f);
         }
+    }
+
+    private void ShootAtAngle(float angle)
+    {
+        GameObject bullet = Instantiate(bulletPrefab, bulletFolder);
+        bullet.transform.rotation = playerTransform.rotation;
+        bullet.transform.Rotate(0, 0, angle);
+        bullet.transform.position = playerTransform.position + (bullet.transform.up * bulletDistanceFromPlayer);
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
     }
 }
