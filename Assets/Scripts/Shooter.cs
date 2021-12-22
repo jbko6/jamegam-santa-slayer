@@ -10,6 +10,7 @@ public class Shooter : MonoBehaviour
     public float bulletSpeed = 10f;
     public float bulletDistanceFromPlayer;
     public bool triShot;
+    public bool quadShot;
     public float normalShootCoolDown = 1f;
     public float shootCooldown = 1f;
     [Header("Prefab settings")]
@@ -47,6 +48,13 @@ public class Shooter : MonoBehaviour
         {
             ShootAtAngle(-15f);
             ShootAtAngle(15f);
+        }
+
+        if (quadShot)
+        {
+            ShootAtAngle(90f);
+            ShootAtAngle(-90f);
+            ShootAtAngle(180f);
         }
     }
 
