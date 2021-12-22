@@ -13,19 +13,12 @@ public class Shooter : MonoBehaviour
     public Transform bulletFolder;
     public GameObject bulletPrefab;
 
-    public static List<GameObject> bullets = new List<GameObject>();
-
     void Update()
     {
         if (Input.GetButtonDown("shoot"))
         {
             Shoot();
         }
-    }
-
-    private void FixedUpdate()
-    {
-        RemoveOffScreenBullets();
     }
 
     private void Shoot()
@@ -35,18 +28,5 @@ public class Shooter : MonoBehaviour
         bullet.transform.position = playerTransform.position + (playerTransform.up * bulletDistanceFromPlayer);
         bullet.transform.rotation = playerTransform.rotation;
         bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up * bulletSpeed;
-        
-        bullets.Add(bullet);
-    }
-
-    private void RemoveOffScreenBullets()
-    {
-        foreach (GameObject bullet in bullets.GetRange(0, bullets.Count))
-        {
-            if (!bullet.GetComponent<SpriteRenderer>().isVisible)
-            {
-                bullets.Remove(bullet);
-            }
-        }
     }
 }

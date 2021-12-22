@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class DeleteBullet : MonoBehaviour
 {
-    
     private void OnBecameInvisible()
     {
-        Destroy(gameObject, 1f);
+        //Destroy(gameObject, 1f);
     }
 }

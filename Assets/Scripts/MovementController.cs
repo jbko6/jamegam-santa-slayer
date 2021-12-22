@@ -19,6 +19,8 @@ public class MovementController : MonoBehaviour
     public GridLayout groundGridLayout;
     public Tilemap groundTilemap;
 
+    public static Transform playerTransform;
+
     private float currentSpeed;
     private float horizontalSpeed;
     private float verticalSpeed;
@@ -26,6 +28,7 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerTransform = transform;
         currentSpeed = speed;
     }
 
