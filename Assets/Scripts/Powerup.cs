@@ -16,11 +16,11 @@ public class Powerup : MonoBehaviour
     
     private void Start()
     {
-        powerups.Add(SpeedBoost);
-        powerups.Add(Shotgun);
-        powerups.Add(GattlingGun);
+        //powerups.Add(SpeedBoost);
+        //powerups.Add(Shotgun);
+        //powerups.Add(GattlingGun);
         powerups.Add(FreezeElves);
-        powerups.Add(QuadShot);
+        //powerups.Add(QuadShot);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -81,6 +81,7 @@ public class Powerup : MonoBehaviour
 
     IEnumerator FreezeElves(Collider2D player)
     {
+        ElfSpawner.frozen = true;
         foreach (GameObject elf in ElfSpawner.elves)
         {
             elf.GetComponent<Elf>().Freeze();
@@ -88,6 +89,7 @@ public class Powerup : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
+        ElfSpawner.frozen = false;
         foreach (GameObject elf in ElfSpawner.elves)
         {
             elf.GetComponent<Elf>().Unfreeze();

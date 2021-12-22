@@ -7,8 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Elf : MonoBehaviour
 {
-    public AIPath aiPath;
-
+    private AIPath aiPath;
     private float maxSpeed;
 
     private void Start()

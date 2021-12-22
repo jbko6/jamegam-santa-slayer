@@ -11,6 +11,7 @@ public class ElfSpawner : MonoBehaviour
     public Transform playerTransform;
     public float timeBetweenSpawns = 5f;
 
+    public static bool frozen;
     private float timer = 0f;
     public static List<GameObject> elves = new List<GameObject>();
     private List<Transform> spawns = new List<Transform>();
@@ -29,11 +30,14 @@ public class ElfSpawner : MonoBehaviour
     void Update()
     {
         // spawn elves every few seconds
-        timer += Time.deltaTime;
-        if (timer >= timeBetweenSpawns)
+        if (!frozen)
         {
-            timer = 0f;
-            SpawnElf();
+            timer += Time.deltaTime;
+            if (timer >= timeBetweenSpawns)
+            {
+                timer = 0f;
+                SpawnElf();
+            }
         }
     }
 
