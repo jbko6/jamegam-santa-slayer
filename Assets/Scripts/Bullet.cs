@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
     // delete the bullet after it goes offscreen
     private void OnBecameInvisible()
     {
-        // this happens 2 seconds later so that the particles don't get destroyed abruptly on screen
-        Destroy(gameObject, 2f);
+        // this happens 1 second later so that the particles don't get destroyed abruptly on screen
+        Destroy(gameObject, 1f);
     }
 }
