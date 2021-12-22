@@ -50088,7 +50088,7 @@ MonoBehaviour:
   zoom: 5
   sensitivity: 10
   maxZoom: 10
-  minZoom: 0
+  minZoom: 3
   iceSpeed: 10
   groundGridLayout: {fileID: 1275826873}
   groundTilemap: {fileID: 1275826873}
