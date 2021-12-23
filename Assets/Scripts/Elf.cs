@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class Elf : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class Elf : MonoBehaviour
     private void Start()
     {
         aiPath = GetComponent<AIPath>();
-        maxSpeed = aiPath.maxSpeed;
+        maxSpeed = UnityEngine.Random.Range(aiPath.maxSpeed - 2f, aiPath.maxSpeed + 2f);
     }
 
     public void Die()
@@ -21,7 +20,7 @@ public class Elf : MonoBehaviour
         ScoreScript.scoreValue++;
         
         // chance to spawn powerup
-        if (Random.Range(0, 5) == 0)
+        if (UnityEngine.Random.Range(0, 5) == 0)
         {
             FindObjectOfType<PowerupSpawner>().SpawnPowerup(transform.position);
         }
