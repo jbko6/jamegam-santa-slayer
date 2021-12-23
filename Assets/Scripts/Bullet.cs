@@ -6,22 +6,27 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    //
+
+    public GameObject hitEffect;
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Elf"))
         {
-            ScoreScript.scoreValue++;
-            Destroy(other.gameObject);
             other.GetComponent<Elf>().Die();
+            
+            // snow splatter effect
+            GameObject effect = Instantiate(hitEffect);
+            effect.transform.position = new Vector3(transform.position.x, transform.position.y, -5f);
+            
             Destroy(gameObject);
-
         }
     }
 
     // delete the bullet after it goes offscreen
     private void OnBecameInvisible()
     {
-        Destroy(gameObject, 2f);
+        // this happens 1 second later so that the particles don't get destroyed abruptly on screen
+        Destroy(gameObject, 1f);
     }
 }
