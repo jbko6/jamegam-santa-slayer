@@ -13,6 +13,8 @@ public class Elf : MonoBehaviour
     {
         aiPath = GetComponent<AIPath>();
         maxSpeed = UnityEngine.Random.Range(aiPath.maxSpeed - 2f, aiPath.maxSpeed + 2f);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, -2f);
     }
 
     public void Die()

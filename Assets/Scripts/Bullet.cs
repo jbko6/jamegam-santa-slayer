@@ -22,20 +22,32 @@ public class Bullet : MonoBehaviour
         if (other.CompareTag("Elf"))
         {
             other.GetComponent<Elf>().Die();
-
-            // snow splatter effect
-            GameObject effect = Instantiate(hitEffect);
-            effect.transform.position = new Vector3(transform.position.x, transform.position.y, -5f);
             
-            // play hit sound
-            GetComponent<CircleCollider2D>().enabled = false;
-            GetComponent<SpriteRenderer>().enabled = false;
-            Destroy(GetComponent<ParticleSystem>());
+            PlayHitEffects();
             
-            audioSource.Play();
+            Destroy(gameObject, audioSource.clip.length);
+        } else if (other.CompareTag("Snowman"))
+        {
+            other.GetComponent<Snowman>().Die();
+            
+            PlayHitEffects();
             
             Destroy(gameObject, audioSource.clip.length);
         }
+    }
+
+    private void PlayHitEffects()
+    {
+        // snow splatter effect
+        GameObject effect = Instantiate(hitEffect);
+        effect.transform.position = new Vector3(transform.position.x, transform.position.y, -5f);
+            
+        // play hit sound
+        GetComponent<CircleCollider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(GetComponent<ParticleSystem>());
+            
+        audioSource.Play();
     }
 
     // delete the bullet after it goes offscreen
