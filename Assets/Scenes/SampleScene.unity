@@ -5579,7 +5579,7 @@ MonoBehaviour:
   elfPrefab: {fileID: 5584423398205697612, guid: bfe3946399150493a8d29a14fd7f1c49, type: 3}
   elfSpawnFolder: {fileID: 704983}
   playerTransform: {fileID: 1923991598}
-  timeBetweenSpawns: 1
+  timeBetweenSpawns: 0.5
 --- !u!1 &808319524
 GameObject:
   m_ObjectHideFlags: 0
@@ -49661,7 +49661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20380309f456a3942accc317456eb83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   numOfHearts: 0
   hearts: []
   fullHeart: {fileID: 0}
@@ -50310,6 +50309,7 @@ MonoBehaviour:
   triShot: 0
   quadShot: 0
   blizzard: 0
+  noCooldown: 0
   normalShootCoolDown: 1
   shootCooldown: 1
   blizzardShootCooldown: 0.1
@@ -50327,7 +50327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20380309f456a3942accc317456eb83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
   numOfHearts: 3
   hearts:
   - {fileID: 557811058}
