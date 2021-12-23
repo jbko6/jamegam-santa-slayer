@@ -58,7 +58,6 @@ public class MovementController : MonoBehaviour
         // float clampedCamX = Mathf.Clamp(transform.position.x, cameraLowerClamp.x - (zoom*Camera.main.aspect), cameraUpperClamp.x - (zoom*Camera.main.aspect));
         // float clampedCamY = Mathf.Clamp(transform.position.y, cameraLowerClamp.y - (zoom), cameraUpperClamp.y - (zoom));
         Camera.main.transform.position = Vector3.Slerp(Camera.main.transform.position, new Vector3(transform.position.x, transform.position.y, -10), Time.deltaTime * speed);
-        Debug.Log(Screen.width);
         zoom -= Input.GetAxis("Mouse ScrollWheel") * sensitivity;
         zoom = Mathf.Clamp(zoom, minZoom, maxZoom);
         Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, zoom, Time.deltaTime*currentSpeed);
