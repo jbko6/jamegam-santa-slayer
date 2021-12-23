@@ -122908,6 +122908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerupPrefab: {fileID: 5839821555839639873, guid: f26bcf44efc8f4fc5b624ed8a831eed0, type: 3}
+  maxPowerups: 6
 --- !u!4 &1326254972
 Transform:
   m_ObjectHideFlags: 0

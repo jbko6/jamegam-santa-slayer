@@ -39,6 +39,8 @@ public class Powerup : MonoBehaviour
         Func<Collider2D, IEnumerator> powerup = powerups[UnityEngine.Random.Range(0, powerups.Count)];
         
         StartCoroutine(powerup(player));
+
+        PowerupSpawner.powerups.Remove(gameObject);
     }
 
     IEnumerator SpeedBoost(Collider2D player)
