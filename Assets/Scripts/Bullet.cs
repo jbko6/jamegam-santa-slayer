@@ -30,6 +30,7 @@ public class Bullet : MonoBehaviour
             // play hit sound
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<SpriteRenderer>().enabled = false;
+            Destroy(GetComponent<ParticleSystem>());
             
             audioSource.Play();
             
