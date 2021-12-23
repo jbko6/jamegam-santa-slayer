@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -64,6 +65,18 @@ public class MovementController : MonoBehaviour
             }
         } else {
             currentSpeed = speed;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        Collider2D other = col.collider;
+        if (other.CompareTag("Elf"))
+        {
+            Health.health--;
+            // remove elf without adding to score
+            ElfSpawner.elves.Remove(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

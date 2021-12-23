@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public int health;
+    public static int health = 3;
     public int numOfHearts;
 
     public Image[] hearts;
@@ -15,7 +15,6 @@ public class Health : MonoBehaviour
     
 
     void Update(){
-
         if (health > numOfHearts){
             health = numOfHearts;
         }
