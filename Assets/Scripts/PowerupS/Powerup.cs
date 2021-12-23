@@ -7,11 +7,14 @@ public class Powerup : MonoBehaviour
 {
     [Header("General settings")]
     public float duration = 5f;
+    public float timeToCollect = 10f;
     [Header("Powerup settings")]
     public float speedBoost = 5f;
     public float gattlingGunSpeed = 0f;
 
     private List<Func<Collider2D, IEnumerator>> powerups = new List<Func<Collider2D, IEnumerator>>();
+    private float timer = 0f;
+    private bool pickedUp = false;
     
     private void Start()
     {
@@ -21,6 +24,16 @@ public class Powerup : MonoBehaviour
         powerups.Add(FreezeElves);
         powerups.Add(QuadShot);
         powerups.Add(Blizzard);
+    }
+
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer > timeToCollect && !pickedUp)
+        {
+            PowerupSpawner.powerups.Remove(gameObject);
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,6 +46,8 @@ public class Powerup : MonoBehaviour
 
     void Pickup(Collider2D player)
     {
+        pickedUp = true;
+        
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<BoxCollider2D>().enabled = false;
 
