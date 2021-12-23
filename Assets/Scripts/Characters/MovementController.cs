@@ -10,10 +10,14 @@ public class MovementController : MonoBehaviour
     public float speed;
     public float AngularSpeed;
     public Vector3 velocity;
+
+    [Header("Camera Options")]
     public float zoom;
     public float sensitivity;
     public float maxZoom;
     public float minZoom;
+    public Vector2 cameraLowerClamp;
+    public Vector2 cameraUpperClamp;
 
     [Header("Tile Modifier Options")]
     public float iceSpeed;
@@ -49,6 +53,10 @@ public class MovementController : MonoBehaviour
         transform.position += velocity;
 
         // zoom in/out
+        // float screenWidth = Camera.main.ScreenToWorldPoint(new Vector2(Camera.main.pixelWidth, 0)).x;
+        // float screenHeight = Camera.main.ScreenToWorldPoint(new Vector2(0, Camera.main.pixelHeight)).y;
+        // float clampedCamX = Mathf.Clamp(transform.position.x, cameraLowerClamp.x - (zoom*Camera.main.aspect), cameraUpperClamp.x - (zoom*Camera.main.aspect));
+        // float clampedCamY = Mathf.Clamp(transform.position.y, cameraLowerClamp.y - (zoom), cameraUpperClamp.y - (zoom));
         Camera.main.transform.position = Vector3.Slerp(Camera.main.transform.position, new Vector3(transform.position.x, transform.position.y, -10), Time.deltaTime * speed);
         zoom -= Input.GetAxis("Mouse ScrollWheel") * sensitivity;
         zoom = Mathf.Clamp(zoom, minZoom, maxZoom);

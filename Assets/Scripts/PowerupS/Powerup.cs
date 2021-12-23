@@ -70,11 +70,11 @@ public class Powerup : MonoBehaviour
     IEnumerator GattlingGun(Collider2D player)
     {
         Shooter shooter = player.GetComponent<Shooter>();
-        shooter.shootCooldown = 0;
+        shooter.noCooldown = true;
 
         yield return new WaitForSeconds(duration);
 
-        shooter.shootCooldown = shooter.normalShootCoolDown;
+        shooter.noCooldown = false;
 
         Destroy(gameObject);
     }
