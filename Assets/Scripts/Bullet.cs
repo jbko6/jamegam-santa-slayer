@@ -6,20 +6,34 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
     public GameObject hitEffect;
+    public List<AudioClip> hitSounds;
+
+    private AudioSource audioSource;
     
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = hitSounds[UnityEngine.Random.Range(0, hitSounds.Count)];
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Elf"))
         {
             other.GetComponent<Elf>().Die();
-            
+
             // snow splatter effect
             GameObject effect = Instantiate(hitEffect);
             effect.transform.position = new Vector3(transform.position.x, transform.position.y, -5f);
             
-            Destroy(gameObject);
+            // play hit sound
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<SpriteRenderer>().enabled = false;
+            
+            audioSource.Play();
+            
+            Destroy(gameObject, audioSource.clip.length);
         }
     }
 
