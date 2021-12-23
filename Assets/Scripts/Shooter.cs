@@ -12,6 +12,7 @@ public class Shooter : MonoBehaviour
     public bool triShot;
     public bool quadShot;
     public bool blizzard;
+    public bool noCooldown;
     public float normalShootCoolDown = 1f;
     public float shootCooldown = 1f;
     public float blizzardShootCooldown = 0.05f;
@@ -35,7 +36,7 @@ public class Shooter : MonoBehaviour
         
         if (Input.GetButton("Fire1") && Time.timeScale == 1f)
         {
-            if (shootTimer >= shootCooldown)
+            if (shootTimer >= shootCooldown || noCooldown)
             {
                 shootTimer = 0f;
                 Shoot();
@@ -57,7 +58,14 @@ public class Shooter : MonoBehaviour
 
     private void Shoot()
     {
-        ShootAtAngle(0f);
+        if (noCooldown)
+        {
+            ShootAtAngle(UnityEngine.Random.Range(-25f, 25f));
+        }
+        else
+        {
+            ShootAtAngle(0f);
+        }
 
         // shoot two extra bullets
         if (triShot)

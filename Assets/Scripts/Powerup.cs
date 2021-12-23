@@ -15,12 +15,12 @@ public class Powerup : MonoBehaviour
     
     private void Start()
     {
-        powerups.Add(SpeedBoost);
-        powerups.Add(Shotgun);
+        //powerups.Add(SpeedBoost);
+        //powerups.Add(Shotgun);
         powerups.Add(GattlingGun);
-        powerups.Add(FreezeElves);
-        powerups.Add(QuadShot);
-        powerups.Add(Blizzard);
+        //powerups.Add(FreezeElves);
+        //powerups.Add(QuadShot);
+        //powerups.Add(Blizzard);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -70,11 +70,11 @@ public class Powerup : MonoBehaviour
     IEnumerator GattlingGun(Collider2D player)
     {
         Shooter shooter = player.GetComponent<Shooter>();
-        shooter.shootCooldown = 0;
+        shooter.noCooldown = true;
 
         yield return new WaitForSeconds(duration);
 
-        shooter.shootCooldown = shooter.normalShootCoolDown;
+        shooter.noCooldown = false;
 
         Destroy(gameObject);
     }
