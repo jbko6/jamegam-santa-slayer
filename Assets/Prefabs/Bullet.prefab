@@ -103,6 +103,8 @@ MonoBehaviour:
   hitEffect: {fileID: 1387426273888439458, guid: 6950e2d3a885d4efb930a03f3c0507c9, type: 3}
   hitSounds:
   - {fileID: 8300000, guid: 75e182f519db048c9b2beb0405302f7c, type: 3}
+  - {fileID: 8300000, guid: a84cd5c07a5bb44849b99c8737fc6789, type: 3}
+  - {fileID: 8300000, guid: 18e256a2f8b2542dda3ad7af7638e40b, type: 3}
 --- !u!58 &-1417552813500726203
 CircleCollider2D:
   m_ObjectHideFlags: 0
