@@ -16,19 +16,14 @@ public class Shooter : MonoBehaviour
     public float normalShootCoolDown = 1f;
     public float shootCooldown = 1f;
     public float blizzardShootCooldown = 0.05f;
+    public Transform playerTransform;
     [Header("Prefab settings")]
     public Transform bulletFolder;
     public GameObject bulletPrefab;
     
-    private Transform playerTransform;
     private float shootTimer = 0f;
     private float blizzardShootTimer = 0f;
     private float blizzardAngle = 0f;
-
-    private void Start()
-    {
-        playerTransform = transform;
-    }
 
     void Update()
     {

@@ -8,9 +8,14 @@ using UnityEngine.SceneManagement;
 public class MovementController : MonoBehaviour
 {
     [Header("Character Options")]
+    public Transform aimTransform;
     public float speed;
     public float AngularSpeed;
     public Vector3 velocity;
+
+    [Header("Sprites")]
+    public Sprite frontSprite;
+    public Sprite backSprite;
 
     [Header("Camera Options")]
     public float zoom;
@@ -25,8 +30,6 @@ public class MovementController : MonoBehaviour
     public GridLayout groundGridLayout;
     public Tilemap groundTilemap;
 
-    public static Transform playerTransform;
-
     private float currentSpeed;
     private float horizontalSpeed;
     private float verticalSpeed;
@@ -34,7 +37,6 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = transform;
         currentSpeed = speed;
     }
 
@@ -45,13 +47,24 @@ public class MovementController : MonoBehaviour
         Vector2 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, AngularSpeed * Time.deltaTime);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, AngularSpeed * Time.deltaTime);
+        aimTransform.rotation = rotation;
 
         // movement
         horizontalSpeed = Input.GetAxis("Horizontal");
         verticalSpeed = Input.GetAxis("Vertical");
         velocity = new Vector3(horizontalSpeed * currentSpeed * Time.deltaTime, verticalSpeed * currentSpeed * Time.deltaTime, 0f);        
         transform.position += velocity;
+        
+        // change direction the sprite is facing
+        if (Input.GetAxisRaw("Vertical") > 0)
+        {
+            GetComponent<SpriteRenderer>().sprite = backSprite;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sprite = frontSprite;
+        }
 
         // zoom in/out
         // float screenWidth = Camera.main.ScreenToWorldPoint(new Vector2(Camera.main.pixelWidth, 0)).x;
