@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.9475136, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 15e6b7494d226ef40af31d4f90bef60b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -107,7 +107,6 @@ MonoBehaviour:
   quadShotImage: {fileID: 21300000, guid: 7ba56cf64b2379646a5fb80214049911, type: 3}
   blizzardImage: {fileID: 21300000, guid: 77edfcbbd36f6954e9e841b91eadca7b, type: 3}
   powerupPrefab: {fileID: 1050107508862221641, guid: 166c47dd1825f9f40b427222523a1e1a, type: 3}
-  canvas: {fileID: 0}
 --- !u!61 &5839821555839639876
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -125,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2.5, y: 2.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
