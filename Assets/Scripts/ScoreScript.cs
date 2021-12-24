@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreScript : MonoBehaviour
 {
-    public static int currentScore = 0;
+    public static int currentScore;
     public static int highScore;
     
     private TextMeshProUGUI scoreText;
@@ -14,6 +14,7 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentScore = 0;
         scoreText = GetComponent<TextMeshProUGUI>();
         highScore = PlayerPrefs.GetInt("highScore");
     }

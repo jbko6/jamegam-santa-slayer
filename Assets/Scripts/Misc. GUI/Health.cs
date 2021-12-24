@@ -5,12 +5,16 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public static int health = 3;
+    public static int health;
     public int numOfHearts;
 
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+
+    void Start(){
+        health = 3;
+    }
 
     
 
