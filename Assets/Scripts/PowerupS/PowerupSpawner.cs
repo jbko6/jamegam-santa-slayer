@@ -5,10 +5,17 @@ using UnityEngine;
 public class PowerupSpawner : MonoBehaviour
 {
     public GameObject powerupPrefab;
+    public int maxPowerups = 6;
+
+    public static List<GameObject> powerups = new List<GameObject>();
 
     public void SpawnPowerup(Vector3 pos)
     {
-        GameObject powerup = Instantiate(powerupPrefab, transform);
-        powerup.transform.position = pos;
+        if (powerups.Count < maxPowerups)
+        {
+            GameObject powerup = Instantiate(powerupPrefab, transform);
+            powerup.transform.position = pos;
+            powerups.Add(powerup);
+        }
     }
 }
