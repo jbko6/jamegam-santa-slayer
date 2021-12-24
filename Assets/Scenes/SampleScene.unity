@@ -123418,7 +123418,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1737750126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124300,8 +124300,6 @@ MonoBehaviour:
   speed: 5
   AngularSpeed: 5
   velocity: {x: 0, y: 0, z: 0}
-  frontSprite: {fileID: 21300000, guid: 6136720710034b04aabff02cea19a6e8, type: 3}
-  backSprite: {fileID: 21300000, guid: bb09f807abd97fc4380a834746ea6337, type: 3}
   zoom: 5
   sensitivity: 10
   maxZoom: 10
