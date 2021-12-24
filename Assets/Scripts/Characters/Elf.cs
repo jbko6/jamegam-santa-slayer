@@ -17,7 +17,7 @@ public class Elf : MonoBehaviour
 
     public void Die()
     {
-        ScoreScript.scoreValue++;
+        ScoreScript.currentScore ++;
         
         // chance to spawn powerup
         if (UnityEngine.Random.Range(0, 5) == 0)

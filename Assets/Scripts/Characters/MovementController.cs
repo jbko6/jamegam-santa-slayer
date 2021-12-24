@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class MovementController : MonoBehaviour
 {
@@ -74,6 +75,10 @@ public class MovementController : MonoBehaviour
         } else {
             currentSpeed = speed;
         }
+        if (Health.health <= 0){
+            SceneManager.LoadScene("GameOverScreen");
+        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D col)

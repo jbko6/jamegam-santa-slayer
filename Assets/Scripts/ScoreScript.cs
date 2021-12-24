@@ -6,7 +6,8 @@ using TMPro;
 
 public class ScoreScript : MonoBehaviour
 {
-    public static int scoreValue = 0;
+    public static int currentScore = 0;
+    public static int highScore;
     
     private TextMeshProUGUI scoreText;
     
@@ -14,11 +15,12 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
+        highScore = PlayerPrefs.GetInt("highScore");
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + scoreValue;
+        scoreText.text = "Score: " + currentScore;
     }
 }
