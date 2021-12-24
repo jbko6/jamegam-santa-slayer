@@ -164,8 +164,8 @@ MonoBehaviour:
   m_text: How do you think you think an overweight elderly man delivers and makes
     bilions of tailored toys a year? Borderline slavery, that's how!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
+  m_sharedMaterial: {fileID: -7539284143588316369, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -189,8 +189,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -255,7 +255,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1.0000153, y: 305.99997}
+  m_AnchoredPosition: {x: 1.0000153, y: 332}
   m_SizeDelta: {x: 796.5396, y: 143.2093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &696683621
@@ -292,7 +292,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696683623
@@ -317,8 +317,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Skip
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
+  m_sharedMaterial: {fileID: -7539284143588316369, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -342,8 +342,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -432,8 +432,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: LET'S SAVE CHRISTMAS!!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
+  m_sharedMaterial: {fileID: -7539284143588316369, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -457,8 +457,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -523,7 +523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1.0000153, y: 305.99997}
+  m_AnchoredPosition: {x: 1.0000153, y: 342}
   m_SizeDelta: {x: 796.5396, y: 143.2093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1057982737
@@ -693,8 +693,8 @@ MonoBehaviour:
   m_text: But this is nothing more than a mere facade, a byproduct of the suffering
     and pain brought upon this world by Santa Claus.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
+  m_sharedMaterial: {fileID: -7539284143588316369, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -718,8 +718,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -784,7 +784,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1.0000153, y: 305.99997}
+  m_AnchoredPosition: {x: 1.0000153, y: 355}
   m_SizeDelta: {x: 796.5396, y: 143.2093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1268666132
@@ -1101,7 +1101,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1.0000153, y: 305.99997}
+  m_AnchoredPosition: {x: 1.0000153, y: 339}
   m_SizeDelta: {x: 796.5396, y: 143.2093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1675520879
@@ -1127,8 +1127,8 @@ MonoBehaviour:
   m_text: GRRRR, we must get those elves to stop them from unionizing, otherwise
     Christmas is cancelled!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
+  m_sharedMaterial: {fileID: -7539284143588316369, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1152,8 +1152,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1236,7 +1236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1.0000153, y: 305.99997}
+  m_AnchoredPosition: {x: 1.0000153, y: 332}
   m_SizeDelta: {x: 796.5396, y: 143.2093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2014129573
@@ -1263,8 +1263,8 @@ MonoBehaviour:
     and the time to end this is now. We must rise up and together. Unionize today
     for a better tomorrow!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
+  m_sharedMaterial: {fileID: -7539284143588316369, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1288,8 +1288,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1379,8 +1379,8 @@ MonoBehaviour:
   m_text: Candy canes. Stockings by the fireplace. Children's smiles. All the wholesome
     things about the holiday we all love.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
+  m_sharedMaterial: {fileID: -7539284143588316369, guid: e7232fa24a5b74d40860e9dd4788f694, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1404,8 +1404,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1470,7 +1470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 1, y: 306}
+  m_AnchoredPosition: {x: 1, y: 355}
   m_SizeDelta: {x: 796.5396, y: 143.2093}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2133725565
