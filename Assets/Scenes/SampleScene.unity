@@ -9158,7 +9158,7 @@ MonoBehaviour:
   elfPrefab: {fileID: 5584423398205697612, guid: bfe3946399150493a8d29a14fd7f1c49, type: 3}
   elfSpawnFolder: {fileID: 704983}
   playerTransform: {fileID: 1923991598}
-  timeBetweenSpawns: 0.5
+  timeBetweenSpawns: 1
 --- !u!1 &696379948
 GameObject:
   m_ObjectHideFlags: 0
