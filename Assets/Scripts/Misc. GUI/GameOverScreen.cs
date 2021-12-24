@@ -12,7 +12,7 @@ public class GameOverScreen : MonoBehaviour
         if (ScoreScript.currentScore > ScoreScript.highScore)
         {
             ScoreScript.highScore = ScoreScript.currentScore;
-            PlayerPrefs.SetFloat("highScore", ScoreScript.currentScore);
+            PlayerPrefs.SetInt("highScore", ScoreScript.currentScore);
         }
 
         pointsText.text = Mathf.RoundToInt(ScoreScript.currentScore).ToString() + " POINTS";
