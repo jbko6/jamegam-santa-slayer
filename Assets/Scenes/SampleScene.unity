@@ -9158,7 +9158,7 @@ MonoBehaviour:
   elfPrefab: {fileID: 5584423398205697612, guid: bfe3946399150493a8d29a14fd7f1c49, type: 3}
   elfSpawnFolder: {fileID: 704983}
   playerTransform: {fileID: 1923991598}
-  timeBetweenSpawns: 0.5
+  timeBetweenSpawns: 1
 --- !u!1 &696379948
 GameObject:
   m_ObjectHideFlags: 0
@@ -9606,6 +9606,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 704983}
   m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1108850897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1108850898}
+  m_Layer: 0
+  m_Name: aimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1108850898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108850897}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1923991598}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1141328763
 PrefabInstance:
@@ -123973,7 +124003,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6136720710034b04aabff02cea19a6e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123994,7 +124024,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1108850898}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124010,9 +124041,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7847f090eeb57d64181aaed6ce12e817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aimTransform: {fileID: 1108850898}
   speed: 5
   AngularSpeed: 5
   velocity: {x: 0, y: 0, z: 0}
+  frontSprite: {fileID: 21300000, guid: 6136720710034b04aabff02cea19a6e8, type: 3}
+  backSprite: {fileID: 21300000, guid: bb09f807abd97fc4380a834746ea6337, type: 3}
   zoom: 5
   sensitivity: 10
   maxZoom: 10
@@ -124035,18 +124069,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0062942505, y: 0.0062942505}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.3902407, y: 1.5916553}
   m_EdgeRadius: 0
 --- !u!50 &1923991601
 Rigidbody2D:
@@ -124068,7 +124102,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &1923991602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124090,6 +124124,7 @@ MonoBehaviour:
   normalShootCoolDown: 1
   shootCooldown: 1
   blizzardShootCooldown: 0.1
+  playerTransform: {fileID: 1108850898}
   bulletFolder: {fileID: 1012483110}
   bulletPrefab: {fileID: 3136627475900056438, guid: 25ea1f703fac248e580f49049ef95bde, type: 3}
 --- !u!114 &1923991603
