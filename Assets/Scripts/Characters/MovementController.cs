@@ -13,10 +13,6 @@ public class MovementController : MonoBehaviour
     public float AngularSpeed;
     public Vector3 velocity;
 
-    [Header("Sprites")]
-    public Sprite frontSprite;
-    public Sprite backSprite;
-
     [Header("Camera Options")]
     public float zoom;
     public float sensitivity;
@@ -30,6 +26,8 @@ public class MovementController : MonoBehaviour
     public GridLayout groundGridLayout;
     public Tilemap groundTilemap;
 
+    private Animator animator;
+    
     private float currentSpeed;
     private float horizontalSpeed;
     private float verticalSpeed;
@@ -37,6 +35,7 @@ public class MovementController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         currentSpeed = speed;
     }
 
@@ -57,14 +56,7 @@ public class MovementController : MonoBehaviour
         transform.position += velocity;
         
         // change direction the sprite is facing
-        if (Input.GetAxisRaw("Vertical") > 0)
-        {
-            GetComponent<SpriteRenderer>().sprite = backSprite;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().sprite = frontSprite;
-        }
+        animator.SetBool("Backwards", Input.GetAxisRaw("Vertical") > 0);
 
         // zoom in/out
         // float screenWidth = Camera.main.ScreenToWorldPoint(new Vector2(Camera.main.pixelWidth, 0)).x;

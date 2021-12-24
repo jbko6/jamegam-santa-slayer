@@ -20,10 +20,16 @@ public class Shooter : MonoBehaviour
     [Header("Prefab settings")]
     public Transform bulletFolder;
     public GameObject bulletPrefab;
-    
+
+    private Animator animator;
     private float shootTimer = 0f;
     private float blizzardShootTimer = 0f;
     private float blizzardAngle = 0f;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Update()
     {
@@ -79,6 +85,11 @@ public class Shooter : MonoBehaviour
 
     private void ShootAtAngle(float angle)
     {
+        if (!animator.GetBool("Backwards"))
+        {
+            animator.SetTrigger("ThrowSnowball");
+        }
+
         GameObject bullet = Instantiate(bulletPrefab, bulletFolder);
         bullet.transform.rotation = playerTransform.rotation;
         bullet.transform.Rotate(0, 0, angle);
